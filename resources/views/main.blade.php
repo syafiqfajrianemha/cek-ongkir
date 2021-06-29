@@ -26,51 +26,87 @@
                                 <div class="col-lg-5">
                                     <div class="mb-3">
                                         <label for="province_origin" class="form-label">Provinsi Asal</label>
-                                        <select class="form-select" name="province_origin" id="province_origin">
+                                        <select class="form-select @error('province_origin') is-invalid @enderror"
+                                            name="province_origin" id="province_origin">
                                             <option selected disabled>--Provinsi--</option>
                                             @foreach ($provinces as $province => $value)
                                                 <option value="{{ $province }}">{{ $value }}</option>
                                             @endforeach
                                         </select>
+                                        @error('province_origin')
+                                            <div id="province_origin" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="city_origin" class="form-label">Kota Asal</label>
-                                        <select class="form-select" name="city_origin" id="city_origin">
+                                        <select class="form-select @error('city_origin') is-invalid @enderror"
+                                            name="city_origin" id="city_origin">
                                             <option selected disabled>--Kota--</option>
                                         </select>
+                                        @error('city_origin')
+                                            <div id="city_origin" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
                                     <div class="mb-3">
                                         <label for="province_destination" class="form-label">Provinsi Tujuan</label>
-                                        <select class="form-select" name="province_destination"
-                                            id="province_destination">
+                                        <select class="form-select @error('province_destination') is-invalid @enderror"
+                                            name="province_destination" id="province_destination">
                                             <option selected disabled>--Provinsi--</option>
                                             @foreach ($provinces as $province => $value)
                                                 <option value="{{ $province }}">{{ $value }}</option>
                                             @endforeach
                                         </select>
+                                        @error('province_destination')
+                                            <div id="province_destination" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="city_destination" class="form-label">Kota Tujuan</label>
-                                        <select class="form-select" name="city_destination" id="city_destination">
+                                        <select class="form-select @error('city_destination') is-invalid @enderror"
+                                            name="city_destination" id="city_destination">
                                             <option selected disabled>--Kota--</option>
                                         </select>
+                                        @error('city_destination')
+                                            <div id="city_destination" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="mb-3">
                                         <label for="courier" class="form-label">Kurir</label>
-                                        <select class="form-select" name="courier" id="courier">
+                                        <select class="form-select @error('courier') is-invalid @enderror"
+                                            name="courier" id="courier">
                                             <option selected disabled>--Kurir--</option>
                                             @foreach ($couriers as $courier => $value)
                                                 <option value="{{ $courier }}">{{ $value }}</option>
                                             @endforeach
                                         </select>
+                                        @error('courier')
+                                            <div id="courier" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="weight" class="form-label">Berat (g)</label>
-                                        <input type="number" name="weight" class="form-control" id="weight" min="1">
+                                        <input type="number" name="weight"
+                                            class="form-control @error('weight') is-invalid @enderror" id="weight"
+                                            min="1">
+                                        @error('weight')
+                                            <div id="weight" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>

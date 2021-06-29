@@ -18,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/province/{id}/cities', [HomeController::class, 'getCities']);
 Route::post('/', [HomeController::class, 'submit'])->name('sumbit');
